@@ -2,7 +2,7 @@ const express = require("express")
 const fs = require("fs")
 
 const app = express()
-const puerto = 3000
+const puerto = 5000
 
 app.use(express.json())
 app.use(express.static("public"))
@@ -87,8 +87,8 @@ app.use((req, res) => {
   })
 })
 
-app.listen(puerto, () => {
-  console.log("Mini-sitio comunitario funcionando en http://localhost:3000")
+app.listen(puerto, "0.0.0.0", () => {
+  console.log(`Mini-sitio comunitario funcionando en http://0.0.0.0:${puerto}`)
   console.log("Proyecto único de Semana 5")
   console.log("Rutas disponibles:")
   console.log("GET  /api/mensajes")
